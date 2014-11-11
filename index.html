@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+<title>Ultimate Tic Tac Toe</title>
+</head>
+
+<body>
+<img class="rocket" src="http://i.imgur.com/cVBdE5r.gif">
+
+
+<div id="title">ULTIMATE TIC TAC TOE</div>
+
+<!-- <div id="intro"> -->
+
+	<div id="welcome" class="intro">
+		welcome!
+		<br><button id="howto">how to play</button><br>
+		<button id="start">begin new game</button>
+	</div>
+
+	<div id="instructions" class="hide intro">
+		how to play
+
+		<p>
+		this is a more sophisticated version of the classic tic tac toe game. in all 9 squares of a standard board, a smaller tic tac toe board is drawn.</p>
+		<p>
+		each turn, you mark one of the small squares.
+		<br><img id="instruct" src="http://i.imgur.com/AXiA8L2.png">
+		</p>
+		<p>
+		when you get three in a row on a small board, you've won that board.
+		<br><img id="instruct" src="http://i.imgur.com/fvTNxED.png">
+		</p>
+		<p>
+		to win the game, you need to win three small boards in a row.
+		<br><img id="instruct" src="http://i.imgur.com/FSdeilC.png">
+		</p>
+		<p>
+		here's the catch: you don't get to pick which of the nine boards to play on. an active board is determined by your opponent's previous move. for example, if your opponent plays in a lower right square...
+		<br><img id="instruct" src="http://i.imgur.com/A0Ds1WP.png">
+		<br>...your next move must be in the lower right board.
+		<br><img id="instruct" src="http://i.imgur.com/FX0nHUX.png">
+		</p>
+		<p>
+		if your opponent sends you to a board that's already been won or tied, you get to play wherever you like. (this means you should avoid sending your opponent to a completed board!)
+		</p>
+		<p>
+		good luck!
+		</p>
+
+		<button id="start2">begin new game</button>
+	</div>
+
+<!-- </div> -->
+
+<div id="game" class="hide">
+<!-- ROW 1 -->
+<div class="bigtic toprow leftcol active" id="0">
+	<table class="subtable 0" id="0">
+		<tr>
+			<td id="0" class="0 subtic stoprow sleftcol"></td>
+			<td id="1" class="0 subtic stoprow"></td>
+			<td id="2" class="0 subtic stoprow srightcol"></td>
+		</tr>
+		<tr>
+			<td id="3" class="0 subtic stoprow sleftcol"></td>
+			<td id="4" class="0 subtic stoprow"></td>
+			<td id="5" class="0 subtic stoprow srightcol"></td>
+		</tr>
+		<tr>
+			<td id="6" class="0 subtic sleftcol"></td>
+			<td id="7" class="0 subtic "></td>
+			<td id="8" class="0 subtic srightcol"></td>
+		</tr>
+		</table>
+</div>
+<div class="bigtic toprow active" id="1">
+	<table class="subtable 1" id="1">
+		<tr>
+			<td id="0" class="1 subtic stoprow sleftcol"></td>
+			<td id="1" class="1 subtic stoprow"></td>
+			<td id="2" class="1 subtic stoprow srightcol"></td>
+		</tr>
+		<tr>
+			<td id="3" class="1 subtic stoprow sleftcol"></td>
+			<td id="4" class="1 subtic stoprow"></td>
+			<td id="5" class="1 subtic stoprow srightcol"></td>
+		</tr>
+		<tr>
+			<td id="6" class="1 subtic sleftcol"></td>
+			<td id="7" class="1 subtic "></td>
+			<td id="8" class="1 subtic srightcol"></td>
+		</tr>
+		</table>
+</div>
+<div class="bigtic toprow rightcol active" id="2">
+	<table class="subtable 2" id="2">
+		<tr>
+			<td id="0" class="2 subtic stoprow sleftcol"></td>
+			<td id="1" class="2 subtic stoprow"></td>
+			<td id="2" class="2 subtic stoprow srightcol"></td>
+		</tr>
+		<tr>
+			<td id="3" class="2 subtic stoprow sleftcol"></td>
+			<td id="4" class="2 subtic stoprow"></td>
+			<td id="5" class="2 subtic stoprow srightcol"></td>
+		</tr>
+		<tr>
+			<td id="6" class="2 subtic sleftcol"></td>
+			<td id="7" class="2 subtic  "></td>
+			<td id="8" class="2 subtic srightcol"></td>
+		</tr>
+		</table>
+</div>
+
+
+<!-- ROW 2 -->
+<div class="bigtic leftcol active" id="3">
+	<table class="subtable 3" id="3">
+		<tr>
+			<td id="0" class="3 subtic stoprow sleftcol"></td>
+			<td id="1" class="3 subtic stoprow"></td>
+			<td id="2" class="3 subtic stoprow srightcol"></td>
+		</tr>
+		<tr>
+			<td id="3" class="3 subtic stoprow sleftcol"></td>
+			<td id="4" class="3 subtic stoprow"></td>
+			<td id="5" class="3 subtic stoprow srightcol"></td>
+		</tr>
+		<tr>
+			<td id="6" class="3 subtic sleftcol"></td>
+			<td id="7" class="3 subtic  "></td>
+			<td id="8" class="3 subtic srightcol"></td>
+		</tr>
+		</table>
+</div>
+<div class="bigtic active" id="4">
+	<table class="subtable 4" id="4">
+		<tr>
+			<td id="0" class="4 subtic stoprow sleftcol"></td>
+			<td id="1" class="4 subtic stoprow"></td>
+			<td id="2" class="4 subtic stoprow srightcol"></td>
+		</tr>
+		<tr>
+			<td id="3" class="4 subtic stoprow sleftcol"></td>
+			<td id="4" class="4 subtic stoprow"></td>
+			<td id="5" class="4 subtic stoprow srightcol"></td>
+		</tr>
+		<tr>
+			<td id="6" class="4 subtic sleftcol"></td>
+			<td id="7" class="4 subtic  "></td>
+			<td id="8" class="4 subtic srightcol"></td>
+		</tr>
+		</table>
+</div>
+<div class="bigtic rightcol active" id="5">
+	<table class="subtable 5" id="5">
+		<tr>
+			<td id="0" class="5 subtic stoprow sleftcol"></td>
+			<td id="1" class="5 subtic stoprow"></td>
+			<td id="2" class="5 subtic stoprow srightcol"></td>
+		</tr>
+		<tr>
+			<td id="3" class="5 subtic stoprow sleftcol"></td>
+			<td id="4" class="5 subtic stoprow"></td>
+			<td id="5" class="5 subtic stoprow srightcol"></td>
+		</tr>
+		<tr>
+			<td id="6" class="5 subtic sleftcol"></td>
+			<td id="7" class="5 subtic  "></td>
+			<td id="8" class="5 subtic srightcol"></td>
+		</tr>
+		</table>
+</div>
+
+<!-- ROW 3 -->
+<div class="bigtic lowrow leftcol active" id="6">
+	<table class="subtable 6" id="6">
+		<tr>
+			<td id="0" class="6 subtic stoprow sleftcol"></td>
+			<td id="1" class="6 subtic stoprow"></td>
+			<td id="2" class="6 subtic stoprow srightcol"></td>
+		</tr>
+		<tr>
+			<td id="3" class="6 subtic stoprow sleftcol"></td>
+			<td id="4" class="6 subtic stoprow"></td>
+			<td id="5" class="6 subtic stoprow srightcol"></td>
+		</tr>
+		<tr>
+			<td id="6" class="6 subtic sleftcol"></td>
+			<td id="7" class="6 subtic  "></td>
+			<td id="8" class="6 subtic srightcol"></td>
+		</tr>
+		</table>
+</div>
+<div class="bigtic lowrow active" id="7">
+	<table class="subtable 7" id="7">
+		<tr>
+			<td id="0" class="7 subtic stoprow sleftcol"></td>
+			<td id="1" class="7 subtic stoprow"></td>
+			<td id="2" class="7 subtic stoprow srightcol"></td>
+		</tr>
+		<tr>
+			<td id="3" class="7 subtic stoprow sleftcol"></td>
+			<td id="4" class="7 subtic stoprow"></td>
+			<td id="5" class="7 subtic stoprow srightcol"></td>
+		</tr>
+		<tr>
+			<td id="6" class="7 subtic sleftcol"></td>
+			<td id="7" class="7 subtic  "></td>
+			<td id="8" class="7 subtic srightcol"></td>
+		</tr>
+		</table>
+</div>
+<div class="bigtic lowrow rightcol active" id="8">
+	<table class="subtable 8" id="8">
+		<tr>
+			<td id="0" class="8 subtic stoprow sleftcol"></td>
+			<td id="1" class="8 subtic stoprow"></td>
+			<td id="2" class="8 subtic stoprow srightcol"></td>
+		</tr>
+		<tr>
+			<td id="3" class="8 subtic stoprow sleftcol"></td>
+			<td id="4" class="8 subtic stoprow"></td>
+			<td id="5" class="8 subtic stoprow srightcol"></td>
+		</tr>
+		<tr>
+			<td id="6" class="8 subtic sleftcol"></td>
+			<td id="7" class="8 subtic  "></td>
+			<td id="8" class="8 subtic srightcol"></td>
+		</tr>
+		</table>
+</div>
+<a href="/"><button>restart</button>
+</div> <!-- closes game div -->
+
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script language="javascript" type="text/javascript" src="script/script.js"></script>
+
+</html>

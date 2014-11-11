@@ -10,21 +10,30 @@ body {
    /*transition: all 1s;*/
 }
 
-.posnorth {
-	margin-top: -400px;
+#rocketcontainer {
+	margin-left: -1000px;
 }
 
-.possouth {
-	margin-bottom: -400px;
+#wincontainer {
+	margin-top: 53px;
+	text-align: center;
+	-webkit-animation: fadein 3s; /* Safari, Chrome and Opera > 12.1 */
+	-moz-animation: fadein 3s; /* Firefox < 16 */
+	-ms-animation: fadein 3s; /* Internet Explorer */
+   -o-animation: fadein 3s; /* Opera < 12.1 */
+   animation: fadein 3s;
 }
 
-.rocket {
-	width: 50px;
-}
 
 .hide {
 	display: none;
 }
+
+.rocket {
+	width: 50px;
+	z-index: 2000;
+}
+
 
 #title {
 	margin: 17px auto 15px auto;
@@ -52,7 +61,6 @@ body {
 #welcome {
 	padding: 80px 0 100px 0;
 }
-
 #instructions {
 	padding: 10px;
 }
@@ -72,6 +80,7 @@ p {
 }
 
 button {
+	z-index: 1000;
 	margin-top: 10px;
 	background-color: rgba(255, 255, 255, .2);
 	color: white;

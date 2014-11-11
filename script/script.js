@@ -143,9 +143,11 @@ $ab = $('#about');
 			//If someone has won the whole game
 				if (checkWin(bigStatus)) {
 					console.log(user+" WINS!"); //*
+					bigWin(user);
 			//If the whole game has been tied
 				} else if (completedSubs === 9) {
 					console.log("TIE GAME"); //*
+					bigTie();
 
 		//====NEXT MOVE SETUP===
 			//Else, update valid square to play in
@@ -205,29 +207,6 @@ $ab = $('#about');
 						delayedRemoveAdd();
 					}
 					console.log(thisSqClasses);
-
-
-
-					// for (var w=0; w<bigtics.length; w++) {
-					// 	if (bigtics[w].id != ticNumber) { //if a bigtic id does not match that of the sq just played
-					// 		bigtics[w].classList.add("invalid"); //adds invalid
-					// 	} else {
-					// 		bigtics[w].classList.remove("invalid");
-					// 		thisSqClasses = bigtics[w].classList; //classlist of the now-active bigtic
-					// 	}
-					// 	sleep(1000);
-					// }
-				//Checks to see if the "valid" bigtic has already been won or tied
-				//If so, removes the invalid class from all bigtics
-					// for (var z=0; z<thisSqClasses.length; z++) {
-					// 	console.log("...checking if class "+thisSqClasses[z]+" = subWon"); //*
-					// 	if (thisSqClasses[z] === "subWon") {
-					// 		console.log("...removing invalid class from all bigtics"); //*
-					// 		for (var u=0; u<bigtics.length; u++) {
-					// 			bigtics[u].classList.remove("invalid");
-					// 		}
-					// 	}
-					// }
 				}
 			} //closes 'invalid' check
 		} //closes 'if complete'  check
@@ -280,11 +259,46 @@ function isEven(num) {
 
 
 //======================================
-//				     TRANSIT
+//				      WIN
 //======================================
 
+function bigWin(user) {
+	console.log(user);
+	$('#game').fadeOut();
+	$('#rocket2')
+		.transition({ x: 900 })
+		.transition({ rotate: '45deg', x: 1050, y: 200 })
+		.transition({ rotate: '-45deg', x: 1300, y: 100 })
+		.transition({ rotate: '45deg', x: 1350, y: 150 })
+		.transition({ rotate: '855deg'})
+		.transition({ x: 1250, y: 250 })
+		.transition({ rotate: '270deg', x: 1050, y: 200 })
+		.transition({ rotate: '-40deg', x: 1120, y: 100 
+	}, function() {
+		console.log("waited");
+		$('#game').addClass('hide');
+		$('#userwon').html(user);
+		$('#winmessage').fadeIn('slow');
+		$('#winbutton').fadeIn('slow');
+	});
+	}
 
-
+function bigTie() {
+	$('#game').fadeOut();
+	$('#rocket2')
+		.transition({ x: 1225, y: 107})
+		.transition({ rotate: '855deg'
+		// .transition({ x: 1250, y: 250 })
+		// .transition({ rotate: '270deg', x: 1050, y: 200 })
+		// .transition({ rotate: '-40deg', x: 1120, y: 100 
+	}, function() {
+		console.log("waited");
+		$('#game').addClass('hide');
+		$('#winmessage').html("tie game");
+		$('#winmessage').fadeIn('slow');
+		$('#winbutton').fadeIn('slow');
+	});
+}
 
 }); //CLOSE JQUERY
 

@@ -27,9 +27,9 @@ body {
 }
 
 #title {
-	margin: 10px auto 10px auto;
-	font-size: 30px;
-	letter-spacing: 3px;
+	margin: 17px auto 15px auto;
+	font-size: 20px;
+	letter-spacing: 8.5px;
 	-webkit-animation: fadein 3s; /* Safari, Chrome and Opera > 12.1 */
 	-moz-animation: fadein 3s; /* Firefox < 16 */
 	-ms-animation: fadein 3s; /* Internet Explorer */
@@ -41,7 +41,7 @@ body {
 	position: absolute;
 	text-align: center;
 	width: 380px;
-	z-index: 200;
+	/*z-index: 100;*/
 	-webkit-animation: fadein 3s; /* Safari, Chrome and Opera > 12.1 */
 	-moz-animation: fadein 3s; /* Firefox < 16 */
 	-ms-animation: fadein 3s; /* Internet Explorer */
@@ -50,7 +50,7 @@ body {
 }
 
 #welcome {
-	padding: 100px 0 100px 0;
+	padding: 80px 0 100px 0;
 }
 
 #instructions {
@@ -58,6 +58,11 @@ body {
 }
 #instruct {
 	width: 150px;
+	margin: 6px;
+	border-radius: 5px;
+}
+#sminstruct {
+	width: 120px;
 	margin: 6px;
 	border-radius: 5px;
 }
@@ -79,7 +84,82 @@ button:hover {
 		background-color: rgba(255, 255, 255, .5);
 }
 
-/* ========== */
+.footer {
+	position: fixed;
+	bottom: 0;
+	width: 381px;
+	color: rgba(255, 255, 255, .6);
+	-webkit-animation: fadein 3s; /* Safari, Chrome and Opera > 12.1 */
+	-moz-animation: fadein 3s; /* Firefox < 16 */
+	-ms-animation: fadein 3s; /* Internet Explorer */
+   -o-animation: fadein 3s; /* Opera < 12.1 */
+   animation: fadein 3s;
+}
+#by {
+	float: left;
+	font-size: 11px;
+}
+#by a {
+	color: rgba(255, 255, 255, .6);
+/*	text-decoration: none;
+*/}
+#by a:hover {
+	color: rgba(255, 255, 255, 1);
+}
+#aboutbutton {
+	float: right;
+	font-size: 11px;
+	text-decoration: underline;
+	z-index: 500;
+}
+#aboutbutton:hover {
+	color: rgba(255, 255, 255, 1);
+	cursor: pointer;
+}
+
+#boutcontainer {
+	overflow: hidden;
+	position: relative;
+	position: fixed;
+	bottom: 0;
+	width: 300px;
+	height: 300px;
+	right: 0;
+}
+
+#about {
+	background: rgba(2, 11, 51, .7);
+	border-radius: 50%;
+	position: absolute;
+	height: 600px;
+	width: 600px;
+	z-index: 200;
+	-webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
+	-moz-animation: fadein 2s; /* Firefox < 16 */
+	-ms-animation: fadein 2s; /* Internet Explorer */
+   -o-animation: fadein 2s; /* Opera < 12.1 */
+   animation: fadein 2s;
+
+}
+
+.abouttxt {
+/*	margin-left: 10%;*/
+-ms-transform: rotate(-45deg); /* IE 9 */
+-webkit-transform: rotate(-45deg); /* Chrome, Safari, Opera */
+transform: rotate(-45deg);
+text-align: center;
+margin-left: -55%;
+margin-top: 15%;
+}
+
+.abouttxtindiv {
+	padding-top: 10px;
+	font-size: 10px;
+}
+
+
+
+/* ========== 
 /*    GAME    */
 /* ========== */
 
@@ -91,89 +171,89 @@ button:hover {
    animation: fadein 2s;
 }
 
-.bigtic {
-	width: 125px;
-	height: 125px;
-	float: left;
-	position: relative;
-	border-radius: 5px;
-}
+	.bigtic {
+		width: 125px;
+		height: 125px;
+		float: left;
+		position: relative;
+		border-radius: 5px;
+	}
 
-.toprow {
-	border-bottom: 2px solid rgba(255, 255, 255, .7);
-}
-.lowrow {
-	border-top: 2px solid rgba(255, 255, 255, .7);
-}
-.leftcol {
-	border-right: 2px solid rgba(255, 255, 255, .7);
-}
-.rightcol {
-	border-left: 2px solid rgba(255, 255, 255, .7);
-}
-.stoprow {
-	border-bottom: 1px solid rgba(255, 255, 255, .2);
-}
-.slowrow {
-	border-top: 1px solid rgba(255, 255, 255, .2);
-}
-.sleftcol {
-	border-right: 1px solid rgba(255, 255, 255, .2);
-}
-.srightcol {
-	border-left: 1px solid rgba(255, 255, 255, .2);
-}
+	.toprow {
+		border-bottom: 2px solid rgba(255, 255, 255, .7);
+	}
+	.lowrow {
+		border-top: 2px solid rgba(255, 255, 255, .7);
+	}
+	.leftcol {
+		border-right: 2px solid rgba(255, 255, 255, .7);
+	}
+	.rightcol {
+		border-left: 2px solid rgba(255, 255, 255, .7);
+	}
+	.stoprow {
+		border-bottom: 1px solid rgba(255, 255, 255, .2);
+	}
+	.slowrow {
+		border-top: 1px solid rgba(255, 255, 255, .2);
+	}
+	.sleftcol {
+		border-right: 1px solid rgba(255, 255, 255, .2);
+	}
+	.srightcol {
+		border-left: 1px solid rgba(255, 255, 255, .2);
+	}
 
-.subtable {
-	margin-top: 3px;
-	margin-left: auto;
-  	margin-right: auto;
-	border-collapse: collapse;
-  	border-spacing: 0;
-  	width: 120px;
-  	height: 120px;
-  	table-layout: fixed;
-}
+	.subtable {
+		margin-top: 3px;
+		margin-left: auto;
+	  	margin-right: auto;
+		border-collapse: collapse;
+	  	border-spacing: 0;
+	  	width: 120px;
+	  	height: 120px;
+	  	table-layout: fixed;
+	}
 
-.subtic {
-	text-align: center;
-	font-size: 15px;
-	width: 30px;
-	height: 30px;
-}
+	.subtic {
+		text-align: center;
+		font-size: 15px;
+		width: 30px;
+		height: 30px;
+	}
 
-.active td:hover {
-	background-color: rgba(255, 255, 255, .2);
-	border-radius: 30px;
-	-webkit-transition: background.3s ease-in-out;
-	-moz-transition: background.3s ease-in-out;
-	-ms-transition: background.3s ease-in-out;
-	-o-transition: background.3s ease-in-out;
-	transition: background.3s ease-in-out;
-}
+	.active td:hover {
+		background-color: rgba(255, 255, 255, .2);
+		border-radius: 30px;
+		-webkit-transition: background.3s ease-in-out;
+		-moz-transition: background.3s ease-in-out;
+		-ms-transition: background.3s ease-in-out;
+		-o-transition: background.3s ease-in-out;
+		transition: background.3s ease-in-out;
+	}
 
-.hidden {
-	display: none;
-}
+	.hidden {
+		display: none;
+	}
 
-.invalid {
-	background-color: rgba(255, 255, 255, .3);
-}
+	.invalid {
+		background-color: rgba(255, 255, 255, .3);
+	}
 
-.active {
-/*-webkit-box-shadow:inset 3px 3px 3px 3px rgba(255,255,255,.5);
-box-shadow:inset 3px 3px 3px 3px rgba(255,255,255,.5);
-*/
-}
+	.active {
+	/*-webkit-box-shadow:inset 3px 3px 3px 3px rgba(255,255,255,.5);
+	box-shadow:inset 3px 3px 3px 3px rgba(255,255,255,.5);
+	*/
+	}
 
-.subWon {
-	font-size: 100px;
-	text-align: center;
-	background-color: rgba(0, 0, 0, 0) !important;
-	line-height: 100px;
-/*	-webkit-box-shadow:inset 3px 3px 3px 3px rgba(255,255,255,0) !important;
-	box-shadow:inset 3px 3px 3px 3px rgba(255,255,255, 0) !important;
-*/}
+	.subWon {
+		font-size: 100px;
+		text-align: center;
+		background-color: rgba(0, 0, 0, 0) !important;
+		line-height: 100px;
+	/*	-webkit-box-shadow:inset 3px 3px 3px 3px rgba(255,255,255,0) !important;
+		box-shadow:inset 3px 3px 3px 3px rgba(255,255,255, 0) !important;
+	*/}
 
 .flash{
   -moz-animation: flash .5s ease-out;

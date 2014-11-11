@@ -3,42 +3,73 @@
 //		//* denotes a console.log line (optional; used for debugging)
 
 $(document).ready(function() {
-	// var subtics = $('.subtic').toArray();
-	// console.log(subtics);
-	// var subtables = $('.subtable').toArray();
-	// console.log(subtables);
-	var bigtics = $('.bigtic').toArray();
-
 // Uncomment to css test a completed subboard
 	// $('table.1').html('o');
 	// bigtics[1].classList.add("subWon");
 
-
-	$('#howto').click( function() {
-
-		$('#welcome').animate({
-      	bottom: '-50%'
- 		}, 100, function() {
- 			$('#welcome').addClass("hide");
- 			$('#instructions').removeClass("hide");
- 		});
-
-		// $('#welcome').addClass("hide");
-	});
-
-	$('#start2').click( function() {
-		console.log("hi");
-		$('#instructions').addClass("hide");
-		$('#game').removeClass("hide");
-	});
-
+//begin game from homepage
 	$('#start').click( function() {
 		$('#welcome').animate({
       	bottom: '-50%'
  		}, 100, function() {
  			$('#welcome').addClass("hide");
+ 			$('#boutcontainer').addClass("hide");
+ 			$('#aboutbutton').addClass("hide");
  			$('#game').removeClass("hide");
  		});
+	});
+
+//home instructions button
+	$('#howto').click( function() {
+		$('#welcome').transition({
+      	x: '500px'
+ 		}, 700, 'ease', function() {
+ 			$('#welcome').addClass("hide");
+ 			$('#instructions1').removeClass("hide");
+ 			$('#aboutbutton').addClass("hide");
+ 			$('#boutcontainer').addClass("hide");
+ 		});
+	});
+//first instruction next button
+	$('#next1').click( function() {
+		$('#instructions1').transition({
+      	opacity: 0
+ 		}, 100, function() {
+ 			$('#instructions1').addClass("hide");
+ 			$('#instructions2').removeClass("hide");
+ 		});
+	});
+//second instruciton next button
+	$('#next2').click( function() {
+		$('#instructions2').transition({
+      	opacity: 0
+ 		}, 100, function() {
+ 			$('#instructions2').addClass("hide");
+ 			$('#instructions3').removeClass("hide");
+ 		});
+	});
+//good luck/start button
+	$('#start2').click( function() {
+		$('#instructions3').transition({
+      	x: '-1000px'
+ 		}, 700, 'ease', function() {
+			$('#instructions3').addClass("hide");
+			$('#game').removeClass("hide");
+		});
+	});
+
+//about triggers
+$ab = $('#about');
+	$('#aboutbutton').mouseenter( function() {
+		$ab.toggleClass("hide");
+		$('.abouttxtindiv').arctext({radius: 390});
+	});
+
+	$('#aboutbutton').mouseleave( function() {
+		$('#boutcontainer').fadeOut('slow', function() {
+			$ab.addClass("hide");
+			$('#boutcontainer').fadeIn('fast');
+		});
 	});
 
 //======================================
@@ -90,7 +121,7 @@ $(document).ready(function() {
 		//If the subboard has been won
 				if (checkWin(tacArray)) {
 					bigStatus[tacNumber]=user;
-					$('table.'+tacString).html(user).addClass("flash"); //Adds large X or O to bigtic
+					$('table.'+tacString).html(user); //Adds large X or O to bigtic
 					bigtics[tacNumber].classList.remove("invalid");
 					bigtics[tacNumber].classList.add("subWon");
 					completedSubs++; //increments completedSubs
@@ -201,7 +232,7 @@ $(document).ready(function() {
 			} //closes 'invalid' check
 		} //closes 'if complete'  check
 	}); //closes subtic click listener
-
+var bigtics = $('.bigtic').toArray();
 
 //      =====TRACKER SETUP=====
 //statusArrays returns an array of arrays.
